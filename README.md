@@ -2,7 +2,7 @@
 
 Resources for the Big Data course of ESGF Paris
 
-## Contact
+## Speakers
 
 Sergei KUDINOV   
 Data Engineer & Web Developer at Adaltas   
