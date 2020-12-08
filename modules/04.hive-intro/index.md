@@ -112,6 +112,54 @@ To read 1 TB -> much longer time
 - clean/optimised data (structured)
 - schema on write
 
+## Example: bank customers
+
+**Schema:**
+
+name,age,gender,bankaccount,company_id
+
+**Data (in CSV format) - 10 Gb:**
+
+```
+sergei,30,m,35678899032,0
+jules,27,m,15466765432,0
+prisca,44,f,76545657687,0
+david,42,m,345766564343,12
+...
+```
+
+### Optimising the file:
+
+1. Transpose file (from row oriented to column oriented)
+
+```
+sergei,jules,prisca,david
+30,27,44,42
+10032,10031,10067,10034
+0,0,0,12
+```
+  
+2. Calculate metadata and keep it
+
+{name:0:26,age:27:39,...}
+  
+3. Compress **sparse values**
+
+```
+sergei,jules,prisca,david
+30,27,44,42
+10032,10031,10067,10034
+3:0,12
+```
+
+4. Use binary formats
+
+Integer value is 2 byte
+
+Example: 
+- 32767 (integer) -> 2 bytes
+- 32767 (string) -> 5 bytes
+
 --
 
 # Hive
