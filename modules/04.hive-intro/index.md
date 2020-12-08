@@ -177,3 +177,5 @@ Example:
 
 - **EXTERNAL** tables - points on a folder anywhere on HDFS (ex: in your own HDFS home)
 - **MANAGED** (internal) tables - located in Hive folders (ex: `/warehouse/tablespace/managed/hive/your_db.db/your_table`)
+
+## The end
