@@ -1,21 +1,5 @@
 
-File size - 153 Mb
-Block size - 100 Mb
-
-schema - name,age,gender,bankaccount
-
-block 1:
-sergei,31,m,35678899032
-jules,27,m,15466765432
-prisca,42,f,765
-
-
-block 2:
-45657687
-david,40,m,345766564343
-
-
-## Payment history table (of database):
+## Example 1: Payment history table (of database):
 
 id,IBAN_from,IBAN_to,amount,timestamp
 
@@ -27,3 +11,17 @@ id,IBAN_from,IBAN_to,amount,timestamp
 ...
 n,FR143564545,FR35678904,1000.65
 n+1,FR143564545,FR35678904,1000.65
+
+
+## Example 2: bank customers
+
+**Schema:**
+
+name,age,gender,bankaccount,company_id
+
+**Data (in CSV format):**
+
+sergei,30,m,35678899032,0
+jules,27,m,15466765432,0
+prisca,44,f,76545657687,0
+david,42,m,345766564343,12

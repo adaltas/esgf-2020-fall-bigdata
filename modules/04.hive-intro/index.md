@@ -1,12 +1,12 @@
 # Recap
 
-## What is Big data? Vs of Big Data
+## Vs of Big Data
 
 - volume
 - variety
 - velocity (speed)
 
-## Why we need Big Data
+## Why we need Big Data?
 
 - data -> value (insights, information)
 
@@ -31,9 +31,9 @@
   - max CPU: 128 cores
 
 - Horisontal (Hadoop)
-  - 1 commodity server (10 Tb, 32 CPU, 64 RAM) -> 10 Server  
+  - 1 commodity server (10 Tb, 32 CPU, 64 RAM) -> 10 servers  
 
-## Benefits horizontal
+## Benefits of horizontal scaling
 
 - reliability (prevents server crashes)
 - cost (hardware and software, but not for support)
@@ -44,7 +44,7 @@
 
 ## Disadvantage
 
-- very difficult to manage
+- it is hard to manage
 
 ## HDFS (Storage)
 
@@ -57,17 +57,20 @@
 - algorithm (programming model)
 
 Steps:
-- Map
-- Shuffle and sort
-- Reduce
+
+1. Map
+2. Shuffle and sort
+3. Reduce
 
 ## YARN
  
 - allocates resources (*CPU (GPU), RAM,* Disk space, Network)
 
-sergei wants to:
+**Example:**
+
+A user wants to:
 - analize 100TB data, on 10 server (the whole cluster)
-- it takes all the resources cluster for 6 hours
+- it takes all the cluster resources for 6 hours
 
 What others do?
 - they wait
@@ -83,24 +86,27 @@ What others do?
 
 **OLAP** - online analytical processing
 
-- analize - aggregations, min&max ...
+- analyze - aggregations, min&max ...
 
 ## Data type
 
-- structured - (RDBMS - MySQL, Oracle, PosgresQL ...)
+- structured - (RDBMS - MySQL, Oracle, PostgresQL ...)
 - semi-structured - csv, json, xml (excel)
 - unstructured - video, images (excel)
+
+## Basics
 
 Bit - 0 or 1
 Byte - 8 bits
 
-1 GB from Disk -> takes a lot of time
-1 TB -> much longer time
+To read 1 GB from Disk -> takes a lot of time
+To read 1 TB -> much longer time
 
 ## Data Lake vs Data Warehouse
 
 **Data Lake**
-- structured
+- unstructured
+- semi-structured
 
 **Data Warehouse**
 - structured
