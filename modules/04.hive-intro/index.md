@@ -105,12 +105,27 @@ To read 1 TB -> much longer time
 ## Data Lake vs Data Warehouse
 
 **Data Lake**
-- unstructured
-- semi-structured
+- raw data (unstructured, semi-structured)
+- schema on read
 
 **Data Warehouse**
-- structured
+- clean/optimised data (structured)
+- schema on write
 
-## Hive
+--
 
-to be continued ...
+# Hive
+
+- Data Warehouse platform
+- OLAP
+- query engine (SQL-like language - HQL)
+
+## File formats
+
+- **line format** (CSV) -> aggregation on a column implies reading the whole file
+- **column format** (ORC - Optimized Row Columnar) -> aggregation: we only read the column
+
+## 2 types of tables
+
+- **EXTERNAL** tables - points on a folder anywhere on HDFS (ex: in your own HDFS home)
+- **MANAGED** (internal) tables - located in Hive folders (ex: `/warehouse/tablespace/managed/hive/your_db.db/your_table`)
