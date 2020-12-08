@@ -13,11 +13,11 @@
 2. Open a Beeline session by typing `beeline`
 3. Try commands:
 
-`SHOW DATABASES;` - lists all databases
-`SHOW TABLES;` - lists all tables in the current database
-`USE DATABASE_NAME;` - change current database (replace `<DATABASE_NAME>`)
-`SELECT * FROM TABLE_NAME` - show all data from the table (replace `<DATABASE_NAME>`)
-`SELECT * FROM TABLE_NAME LIMIT 10` - show 10 rows from the table (replace `<DATABASE_NAME>`)
+- `SHOW DATABASES;` - lists all databases
+- `SHOW TABLES;` - lists all tables in the current database
+- `USE DATABASE_NAME;` - change current database (replace `<DATABASE_NAME>`)
+- `SELECT * FROM TABLE_NAME` - show all data from the table (replace `<DATABASE_NAME>`)
+- `SELECT * FROM TABLE_NAME LIMIT 10` - show 10 rows from the table (replace `<DATABASE_NAME>`)
 
 You can try this for example:
 
