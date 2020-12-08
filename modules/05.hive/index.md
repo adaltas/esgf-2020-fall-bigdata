@@ -54,7 +54,7 @@
 
 ## Example: file size optimisation
 
-Since a disk I/O is the slowest part of the computer, we need to optimise. 
+Since a disk I/O is the slowest resource of the computer, we need to optimise file and data format in it. 
 
 Consider a file containing customers of a bank:
 
@@ -64,7 +64,7 @@ Consider a file containing customers of a bank:
 name,age,gender,bank_account,company_id
 ```
 
-**Data (in CSV format) - 10 Gb:**
+**Data (in CSV format)** (it could weigh many Gb)
 
 ```
 sergei,30,m,35678899032,0
@@ -94,11 +94,10 @@ sergei,jules,prisca,david
 3. Compress **sparse values** (zero-values)
 
 ```
-sergei,jules,prisca,david
-30,27,44,42
-10032,10031,10067,10034
-3:0,12
+0,0,0,12 -> 3:0,12
 ```
+
+It takes up less disk space.
 
 4. Use binary formats
 
