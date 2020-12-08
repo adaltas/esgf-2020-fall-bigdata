@@ -91,7 +91,7 @@ sergei,jules,prisca,david
 {name:0:26,age:27:39,bank_account:40:64,company_id:65:74}
 ```
 
-3. Compress **sparse values** (zero-values)
+3. **Compress sparse values** (zero-values)
 
 ```
 0,0,0,12 -> 3:0,12
@@ -99,7 +99,7 @@ sergei,jules,prisca,david
 
 It takes up less disk space.
 
-4. Use binary formats
+4. **Use binary formats**
 
 Integer value is 2 byte
 
@@ -108,7 +108,7 @@ Example:
 - 32767 (integer) -> 2 bytes
 - 32767 (string) -> 5 bytes
 
-5. etc.
+5. **etc.**
 
 There are more optimisation ways such as [partitioning](https://data-flair.training/blogs/apache-hive-partitions/) and [bucketing](https://data-flair.training/blogs/bucketing-in-hive/).
 
