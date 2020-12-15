@@ -106,3 +106,16 @@ FROM esgf_2020_fall_1.${username}_drivers_ext;
 ```
 
 4. Check that the data were correctly inserted by selecting all data.
+
+## Bonus 1. Analyze the data
+
+1. Count certified drivers
+2. Find the maximum `ssn` value
+
+## Bonus 2. Play with a bigger data set
+
+1. Chose an interesting data set in `/data` folder on HDFS (explore with `hdfs dfs -ls /data`) and make a managed ORC table using the same way like in the steps 2-4 of the lab.
+
+2. Explore created ORC files and compare it with the original CSV (the file size for example).
+
+3. Make some analyze on your choice.
