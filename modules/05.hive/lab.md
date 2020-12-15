@@ -57,7 +57,11 @@ SET hivevar:username=YOUR_USERNAME;
 ```sql
 CREATE EXTERNAL TABLE IF NOT EXISTS esgf_2020_fall_1.${username}_drivers_ext (
   driver_id INT,
-  -- COMPLETE HERE
+  name STRING,
+  ssn INT,
+  location STRING,
+  certified STRING,
+  wage_plan STRING
 )
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 STORED AS TEXTFILE
@@ -81,7 +85,12 @@ TBLPROPERTIES ('skip.header.line.count'='1');
 ```sql
 CREATE TABLE IF NOT EXISTS esgf_2020_fall_1.${username}_drivers (
   driver_id INT,
-  -- COMPLETE HERE
+  first_name STRING,
+  last_name STRING,
+  ssn INT,
+  address STRING,
+  certified BOOLEAN,
+  wage_plan STRING
 )
 STORED AS ORC;
 ```
@@ -101,7 +110,12 @@ Now we want to populate our ORC table from our CSV table. Using the [Hive Data M
 INSERT OVERWRITE TABLE esgf_2020_fall_1.${username}_drivers
 SELECT 
   driver_id,
-  -- COMPLETE HERE
+  split(name, ' ')[0] AS first_name,
+  split(name, ' ')[1] AS last_name,
+  ssn,
+  location AS address,
+  CASE WHEN certified = 'Y' THEN true ELSE false END,
+  wage_plan
 FROM esgf_2020_fall_1.${username}_drivers_ext;
 ```
 
