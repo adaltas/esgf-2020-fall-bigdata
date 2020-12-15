@@ -34,7 +34,7 @@ For this lab we will be using a very small dataset of taxi drivers.
 
 Using the official [Hive Data Definition Langage](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL):
 
-1. Using the HDFS CLI, take a look at the data used for this lab at `/data/drivers/drivers.csv`
+1. Using the (HDFS CLI)[https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html#dfs], take a look at the data used for this lab at `/data/drivers/drivers.csv`
 
 2. Copy the `drivers` folder to your user home directory on HDFS:
 
