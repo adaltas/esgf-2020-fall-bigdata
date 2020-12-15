@@ -21,7 +21,7 @@
 
 You can try this for example:
 
-```
+```sql
 USE esgf_2020_fall_1;
 SHOW TABLES;
 SELECT * FROM sergei_drivers_ext;
@@ -35,42 +35,56 @@ For this lab we will be using a very small dataset of taxi drivers.
 Using the official [Hive Data Definition Langage](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL):
 
 1. Using the HDFS CLI, take a look at the data used for this lab at `/data/drivers/drivers.csv`
+
 2. Copy the `drivers` folder to your user home directory on HDFS:
-   ```sh
-   hdfs dfs -mkdir -p "drivers"
-   hdfs dfs -cp /data/drivers/drivers.csv drivers
-   ```
-3. Open a Beeline session by typing `beeline`
-4. Create an external table targeting our data with this statement (to be completed, replace `YOUR_USERNAME`):
-   ```sql
-   use esgf_2020_fall_1;
-   SET hivevar:username=YOUR_USERNAME;
-   CREATE EXTERNAL TABLE ${username}_drivers_ext (
-     driver_id INT,
-     -- COMPLETE HERE
-   )
-   ROW FORMAT SERDE -- COMPLETE HERE
-   STORED AS TEXTFILE
-   LOCATION -- COMPLETE HERE
-   TBLPROPERTIES ('skip.header.line.count'='1');
-   ```
-5. Check that the table is correctly created by selecting all the data in it. **If you see only `NULL` values, your schema is not correct.**
+
+```sh
+hdfs dfs -mkdir -p "drivers"
+hdfs dfs -cp /data/drivers/drivers.csv drivers
+```
+   
+3. Open a Beeline session by typing `beeline`.
+
+4. Use prepared database `esgf_2020_fall_1` and define your username (replace `YOUR_USERNAME`). **Don't forget to run it every time you open a Beeline session:**
+
+```sql
+use esgf_2020_fall_1;
+SET hivevar:username=YOUR_USERNAME;
+```
+
+5. Create an external table targeting our data with this statement (complete missing parts):
+
+```sql
+CREATE EXTERNAL TABLE IF NOT EXISTS esgf_2020_fall_1.${username}_drivers_ext (
+  driver_id INT,
+  -- COMPLETE HERE
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+STORED AS TEXTFILE
+LOCATION 'drivers/'
+TBLPROPERTIES ('skip.header.line.count'='1');
+```
+
+6. Check that the table is correctly created by selecting all the data in it. **If you see only `NULL` values, your schema is not correct.**
 
 ## 3. Create a managed ORC table
 
-**Tip:** to create a managed ORC table, you don't have to specify a `LOCATION` nor a `SERDE`:
-
-```sql
-CREATE ...
-STORED AS ORC;
-```
-
 1. Create a managed ORC table (**not external**) that must have the same schema as the external table created above (`${username}_drivers_ext`) but with:
    1. The `_ext` prefix removed from the name: `${username}_drivers`
-   2. The column `name` devided into `first_name` and `last_name`
-   3. The columne `location` renamed as `address` (because `LOCATION` is a Hive keyword)
+   2. The column `name` divided into `first_name` and `last_name`
+   3. The column `location` renamed as `address` (because `LOCATION` is a Hive keyword)
    4. The column `certified` as a `BOOLEAN`
 2. Check that your table was created using the HDFS CLI at `/warehouse/tablespace/managed/hive/esgf_2020_fall_1.db/YOUR_USERNAME_drivers` (should be empty)
+
+**Tip:** to create a managed ORC table, you don't have to specify a `LOCATION` nor a `SERDE`.
+
+```sql
+CREATE TABLE IF NOT EXISTS esgf_2020_fall_1.${username}_drivers (
+  driver_id INT,
+  -- COMPLETE HERE
+)
+STORED AS ORC;
+```
 
 ## 4. Load data from the CSV table to the ORC table
 
@@ -82,3 +96,13 @@ Now we want to populate our ORC table from our CSV table. Using the [Hive Data M
    - Rename `location` to `address`
 2. Execute your query
 3. Check what the data looks like in the managed table using the HDFS CLI at `/warehouse/tablespace/managed/hive/esgf_2020_fall_1.db/$USER_nyc_drivers`
+
+```sql
+INSERT OVERWRITE TABLE esgf_2020_fall_1.${username}_drivers
+SELECT 
+  driver_id,
+  -- COMPLETE HERE
+FROM esgf_2020_fall_1.${username}_drivers_ext;
+```
+
+4. Check that the data were correctly inserted by selecting all data.
