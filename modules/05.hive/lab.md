@@ -43,7 +43,7 @@ hdfs dfs -mkdir -p "drivers"
 hdfs dfs -cp /data/drivers/drivers.csv drivers
 ```
    
-3. Open a Beeline session by typing `beeline`.
+3. Open a Beeline session by typing `beeline`. (To disconnect from Beeline press `CTRL + C`).
 
 4. Use prepared database `esgf_2020_fall_1` and define your username (replace `YOUR_USERNAME`). **Don't forget to run it every time you open a Beeline session:**
 
