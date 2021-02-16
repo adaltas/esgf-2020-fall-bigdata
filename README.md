@@ -13,6 +13,7 @@ Resources for the Big Data course of ESGF Paris
 3. [Hadoop MapReduce](modules/03.mapreduce/index.md)
 4. [Hadoop YARN](modules/04.yarn/index.md)
 5. [Hive](modules/05.hive/index.md)
+6. [NoSQL with HBase](modules/06.nosql-with-hbase/index.md)
 
 ## Speakers
 
