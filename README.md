@@ -14,6 +14,7 @@ Resources for the Big Data course of ESGF Paris
 4. [Hadoop YARN](modules/04.yarn/index.md)
 5. [Hive](modules/05.hive/index.md)
 6. [NoSQL with HBase](modules/06.nosql-with-hbase/index.md)
+7. [Streaming with Kafka](modules/07.streaming-with-kafka/index.md)
 
 ## Speakers
 
