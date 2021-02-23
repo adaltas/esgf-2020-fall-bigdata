@@ -1,3 +1,4 @@
+
 # Lab
 
 ## Objectives
@@ -39,12 +40,12 @@ Explore existing tables using these commands:
 
 - `create '<table name>','<column family>'` - creates table with column family name
 
-> Note, create a table in a namespace with a name prefixed with `esgf_2021_spring:`. 
+> Note, create a table in a namespace with a name prefixed with `esgf_2020_fall_1:`. 
 
 For example, to create a table for IMDB opinions with 2 column families `meta` and `review`, run the command (replace `<your name>`):
 
 ```
-create 'esgf_2021_spring:<your name>', 'meta', 'review'
+create 'esgf_2020_fall_1:<your name>', 'meta', 'review'
 ```
 
 3. Write data into a table
@@ -54,7 +55,7 @@ create 'esgf_2021_spring:<your name>', 'meta', 'review'
 Try to write something, for example like this (replace `<your name>`):
 
 ```
-put 'esgf_2021_spring:<your name>', '1', 'meta:name', 'Pulp Fiction'
+put 'esgf_2020_fall_1:<your name>', '1', 'meta:name', 'Pulp Fiction'
 ```
 
 ## 3. Create the IMDB reviews table
