@@ -15,6 +15,7 @@ Resources for the Big Data course of ESGF Paris
 5. [Hive](modules/05.hive/index.md)
 6. [NoSQL with HBase](modules/06.nosql-with-hbase/index.md)
 7. [Streaming with Kafka](modules/07.streaming-with-kafka/index.md)
+8. [Data Governance](modules/08.data-governance/index.md)
 
 ## Speakers
 
