@@ -1,7 +1,7 @@
 
 # Lab
 
-The goal of this lab is to learn the proper way of creating an IT project from initializing a project folder to pushing it to a remote repository. The project is implementing a static website with configured Continuous Deployment pipeline using Netlify. 
+The goal of this lab is to learn the proper way of creating an IT project. The project is implementing a static website with configured Continuous Deployment pipeline using Netlify. 
 
 ## Objectives
 
@@ -13,14 +13,14 @@ The goal of this lab is to learn the proper way of creating an IT project from i
 
 ## Prerequisites
 
-1. Knowledge of basic Git commands, Git installed and an existing [GitHub](https://github.com/) account.
+1. Knowledge of basic Git commands, installed Git, and an existing [GitHub](https://github.com/) account.
 2. Knowledge of basic CLI Bash commands.
 
 > Note for Windows users only! Don't use the default *CMD.exe*, because it has different commands from the command line of Linux OS, which is used in most IT environments. Instead, use **Git Bash** (should be installed when installing Git) or **PowerShell**. 
 
 ## 1. Start a project
 
-**Note!** When creating any folders or files, don't use spaces (` `). Otherwise, you will have to use escaping characters when navigating to them. It is recommended to use the "kebab-case" naming convention by separating words with dashes (`-`).
+**Note!** When creating any folders or files, don't use spaces (` `). Otherwise, you will have to use escape characters when navigating to them. It is recommended to use the "kebab-case" naming convention by separating words with dashes (`-`).
 
 1. Using **CLI Bash commands** in your terminal (Terminal or Git Bash) navigate to the directory where you will store your project folder.
 
@@ -69,7 +69,7 @@ Your simple website is ready. Let's document the project with a README.md file.
 
 ## 3. Document the project
 
-1. Create the `README.md` file under the root folder (`my-devops-project`). The file uses the [Markdown syntax](https://www.markdownguide.org/basic-syntax/) which is widely used in IT projects documentation. Developers love it for the clarity and simplicity!
+1. Create the `README.md` file under the root folder (`my-devops-project`). The file uses the [Markdown syntax](https://www.markdownguide.org/basic-syntax/) which is widely used in IT projects documentation. Developers love it for clarity and simplicity!
 
 You can refer to [this documentation](https://www.makeareadme.com/) to learn more about README files.
 
@@ -105,7 +105,7 @@ The minimal documentation is written. Let's now push the project to a remote rep
 
 ## 4. Push the project to GitHub
 
-1. Login to [Github.com](https://github.com/)
+1. Log in to [Github.com](https://github.com/)
 
 2. Navigate to the **"Your repositories"** page
 
@@ -114,7 +114,7 @@ The minimal documentation is written. Let's now push the project to a remote rep
   - Chose the **"Public"** option
   - Click on **"Create repository"**
 
-4. Link local and remote repositories:
+4. Link the local and remote repositories:
 
 ```bash
 git remote add origin YOUR_REPOSITORY_URL
@@ -148,11 +148,11 @@ git push --set-upstream origin master
 
 ![Netlify](image/netlify-3.png)
 
-- Once GitHub is configured, choose you repository:
+- Once GitHub is configured, choose your repository:
 
 ![Netlify](image/netlify-4.png)
 
-- Configure deployment settings. Choose the branch to deploy, the directory containing the static files (`public`) and click on "Deploy site":
+- Configure deployment settings. Choose the branch to deploy, the directory containing the static files (`public`), and click on "Deploy site":
 
 ![Netlify](image/netlify-5.png)
 
@@ -166,10 +166,10 @@ git push --set-upstream origin master
 
 Now your website is deployed. Moreover, it will be redeployed on every push to the master branch of the GitHub repository. Let's test it
 
-3. Modify the "Hello world!" message in you `index.html` file, commit and push it to GitHub. In a few seconds this will appear on your Netlify deployment.
+3. Modify the "Hello world!" message in your `index.html` file, commit and push it to GitHub. In a few seconds, this will appear on your Netlify deployment.
 
 ## Bonus tasks
 
-1. Find a setting on Netlify to change the generated Netlify subdomain (`.netlify.app`).
+1. Find a setting on Netlify to change the generated Netlify subdomain (`*.netlify.app`).
 
 2. Place an image on the webpage using the [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) HTML tag and push it to GitHub.
