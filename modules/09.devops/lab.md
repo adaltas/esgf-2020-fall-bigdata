@@ -1,7 +1,7 @@
 
 # Lab
 
-The goal of this lab is to learn the proper way of creating an IT project and to implement Continuous Deployment to bring automation. The project is implementing a static website.
+The goal of this lab is to learn the proper way of creating an IT project and to implement Continuous Deployment to bring automation. You will create a simple static website, source it on GitHub, and deploy to Netlify (cloud service for hosting websites).
 
 ## Objectives
 
