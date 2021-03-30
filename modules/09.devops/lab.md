@@ -1,7 +1,7 @@
 
 # Lab
 
-The goal of this lab is to learn the proper way of creating an IT project. The project is implementing a static website with configured Continuous Deployment pipeline using Netlify. 
+The goal of this lab is to learn the proper way of creating an IT project and to implement Continuous Deployment to bring automation. The project is implementing a static website.
 
 ## Objectives
 
