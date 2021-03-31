@@ -173,3 +173,8 @@ Now your website is deployed. Moreover, it will be redeployed on every push to t
 1. Find a setting on Netlify to change the generated Netlify subdomain (`*.netlify.app`).
 
 2. Place an image on the webpage using the [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) HTML tag and push it to GitHub.
+
+3. Reproduce a little website builder and build CI/CD pipeline with [GitHub Actions](https://docs.github.com/en/actions).   
+  - Create a script which takes a TXT file from `src` folder (like `src/input.txt`), and build an HTML file out of it to the `public` folder (like `public/index.html`).
+  - Every modification on `input.txt` pushed to the `master` branch, should regenerate `public/index.html` and push it to the `build` brunch.
+  - The `build` brunch is listened by Netlify to publish a new version.
